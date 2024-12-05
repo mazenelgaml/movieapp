@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:untitled10/ui/home/home_screen.dart';
 import '../../widgets/custom_elevated_button.dart';
 import '../auth/sign_in/sign_in_screen.dart';
 import '../profile/profile_screen.dart';
@@ -12,7 +13,7 @@ class WelcomeScreen extends StatelessWidget {
       final SharedPreferences prefs =  SharedPreferences.getInstance() as SharedPreferences;
       bool? checker = prefs.containsKey("uid");
       if(checker){
-        Get.off(()=> Profile());
+        Get.off(()=> HomeScreen());
       }}
 
   }
@@ -44,7 +45,7 @@ class WelcomeScreen extends StatelessWidget {
               ),
               Padding(
                   padding: const EdgeInsets.only(top: 20.0),
-                  child:CustomButton(onpressed: () {Get.to(()=>SignIn());  }, text: 'Get Started', col: Colors.black)
+                  child:CustomButton(onpressed: () {Get.to(()=>HomeScreen());  }, text: 'Get Started', col: Colors.black)
 
               )],),
         )],),),);
