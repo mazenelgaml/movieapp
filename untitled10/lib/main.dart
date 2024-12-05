@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'package:untitled10/trending/trending_screen.dart';
+import 'package:untitled10/ui/movies/movies_screen.dart';
+import 'package:untitled10/ui/home/home_screen.dart';
 import 'package:untitled10/ui/welcome/welcome_screen.dart';
 import 'firebase_options.dart';
 
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
@@ -57,11 +59,14 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 class _MyHomePageState extends State<MyHomePage> {
+
+
+
   @override
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner:false,
-      home: Trending(),
+      home:HomeScreen(),
     );
   }
 
